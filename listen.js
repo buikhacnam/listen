@@ -3,7 +3,7 @@ Select Voice: <select id='voiceList'></select> <br>
  <input id='txtInput' />
  <button id='btnSpeak'>Speak!</button>
 */
-var default1 = document.getElementById('default');
+
 var txtInput = document.querySelector('#txtInput');
 var voiceList = document.querySelector('#voiceList');
 var btnSpeak = document.querySelector('#btnSpeak');
@@ -36,7 +36,7 @@ PopulateVoices();
 
 
 btnSpeak.addEventListener('click', ()=> {
-            var toSpeak = new SpeechSynthesisUtterance(default1.innerText);
+            var toSpeak = new SpeechSynthesisUtterance(txtInput.value);
             var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
             console.log(selectedVoiceName);
             voices.forEach((voice)=>{
